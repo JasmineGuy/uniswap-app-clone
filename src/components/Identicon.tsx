@@ -14,20 +14,20 @@ export default function Identicon() {
   const ref = useRef<HTMLDivElement>();
   const { account } = useEthers();
 
-//   useEffect(() => {
-//     if (account && ref.current) {
-//       ref.current.innerHTML = "";
-//     }
-//   }, [account]);
+  useEffect(() => {
+    if (account && ref.current) {
+      ref.current.innerHTML = "";
+    }
+  }, [account]);
 
-//   return <StyledIdenticon ref={ref as any}
-// }
+  return <StyledIdenticon ref={ref as any} />;
+}
 
-useEffect(() => {
-  if (account && ref.current) {
-    ref.current.innerHTML = "";
-    ref.current.appendChild(Jazzicon(16, parseInt(account.slice(2, 10), 16)));
-  }
-}, [account]);
+// useEffect(() => {
+//   if (account && ref.current) {
+//     ref.current.innerHTML = "";
+//     ref.current.appendChild(Jazzicon(16, parseInt(account.slice(2, 10), 16)));
+//   }
+// }, [account]);
 
-return <StyledIdenticon ref={ref as any} />
+// return <StyledIdenticon ref={ref as any} />;
